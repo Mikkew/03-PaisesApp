@@ -1,0 +1,50 @@
+<table class="table table-hover animate__animated animate__fadeIn animate__faster">
+    <thead>
+      <tr>
+        <th class="h6 fw-bold">
+          No.
+        </th>
+        <th class="h6 fw-bold">
+          Bandera
+        </th>
+        <th class="h6 fw-bold">
+          Nombre
+        </th>
+        <th class="h6 fw-bold">
+          Capital 
+        </th>
+        <th class="h6 fw-bold">
+          Region
+        </th>
+        <th class="h6 fw-bold">
+          Población
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let pais of paises; let i = index">
+      <tr>
+        <td>
+          {{ i + 1 }}
+        </td>
+        <td>
+          <img class="small-flag" [src]="pais.flag" [alt]="pais.alpha3Code">
+        </td>
+        <td>
+          {{pais.name}}
+        </td>
+        <td>
+          {{pais.capital}}
+        </td>
+        <td>
+          {{pais.region}}
+        </td>
+        <td>
+          {{pais.population | number}}
+        </td>
+        <td>
+          <a [routerLink]="['/pais', pais.alpha3Code]" >Ver...</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
